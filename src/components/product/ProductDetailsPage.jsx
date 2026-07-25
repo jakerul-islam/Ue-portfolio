@@ -15,7 +15,7 @@ import {
 } from 'react-icons/fa';
 
 const ProductDetailsPage = ({ data }) => {
-  // যদি কোনো কারণে ডাটা না পাওয়া যায় তার জন্য সেফটি চেক
+  
   if (!data) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center text-center p-8 text-slate-200">
@@ -204,9 +204,9 @@ const ProductDetailsPage = ({ data }) => {
           <p className="text-slate-400 text-xs max-w-md mx-auto">
             Get in touch with our technical team to schedule an architecture review or request custom deployment documentation.
           </p>
-          <button className="bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold px-6 py-2.5 rounded-xl text-xs uppercase tracking-wider transition-all">
+         <Link href={'/contact'}> <button className="bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold px-6 py-2.5 rounded-xl text-xs uppercase tracking-wider transition-all">
             Contact Technical Team
-          </button>
+          </button></Link>
         </div>
       </section>
 
