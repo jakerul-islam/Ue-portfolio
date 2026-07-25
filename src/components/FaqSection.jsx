@@ -28,6 +28,16 @@ export default function FaqSection() {
   const toggleFaq = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+  const [submit,setSubmit]=useState(false)
+  const [loading , setLoading]= useState(false)
+  const submitHandle =(e)=>{
+    e.preventDefault()
+    setSubmit(true)
+    const formData = new FormData(e.currentTarget)
+    const data = Object.fromEntries(formData.entries())
+
+    console.log(data)
+  }
 
   return (
     <section className="bg-slate-900 text-white py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-800/80">
@@ -117,7 +127,7 @@ export default function FaqSection() {
             </div>
 
             {/* Form */}
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
+            <form onSubmit={submitHandle} className="space-y-5">
               
               {/* Field 1: Your Name */}
               <div>
